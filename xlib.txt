@@ -1,0 +1,36 @@
+========================= Name & Summary Matched: Xlib =========================
+gdk-pixbuf2-xlib.x86_64 : Deprecated Xlib integration for gdk-pixbuf2
+gdk-pixbuf2-xlib.i686 : Deprecated Xlib integration for gdk-pixbuf2
+gdk-pixbuf2-xlib-devel.i686 : Development files for gdk-pixbuf2-xlib
+gdk-pixbuf2-xlib-devel.x86_64 : Development files for gdk-pixbuf2-xlib
+ocaml-ppxlib-devel.i686 : Development files for ocaml-ppxlib
+ocaml-ppxlib-devel.x86_64 : Development files for ocaml-ppxlib
+python-xlib-doc.noarch : Documentation and examples for python-xlib
+rubygem-mixlib-cli-doc.noarch : Documentation for rubygem-mixlib-cli
+rubygem-mixlib-config-doc.noarch : Documentation for rubygem-mixlib-config
+rubygem-mixlib-log-doc.noarch : Documentation for rubygem-mixlib-log
+rubygem-mixlib-shellout-doc.noarch : Documentation for rubygem-mixlib-shellout
+============================== Name Matched: Xlib ==============================
+FoXlibf.i686 : A Fortran XML Library
+FoXlibf.x86_64 : A Fortran XML Library
+FoXlibf-devel.i686 : Development files for FoX
+FoXlibf-devel.x86_64 : Development files for FoX
+FoXlibf-static.i686 : Static libraries for FoX
+FoXlibf-static.x86_64 : Static libraries for FoX
+ocaml-ppxlib.i686 : Base library and tools for ppx rewriters
+ocaml-ppxlib.x86_64 : Base library and tools for ppx rewriters
+python3-xlib.noarch : X client library for Python 3
+rubygem-mixlib-cli.noarch : Simple Ruby mix-in for CLI interfaces
+rubygem-mixlib-config.noarch : Simple Ruby config mix-in
+rubygem-mixlib-log.noarch : A gem that provides a simple mixin for log functionality
+rubygem-mixlib-shellout.noarch : Run external commands on Unix or Windows
+rust-cairo-rs+xlib-devel.noarch : Rust bindings for the Cairo library
+rust-cairo-sys-rs+xlib-devel.noarch : FFI bindings to libcairo
+rust-x11+xlib-devel.noarch : X11 library bindings for Rust
+rust-x11+xlib_xcb-devel.noarch : X11 library bindings for Rust
+rust-xcb+xlib_xcb-devel.noarch : Rust bindings and wrappers for XCB
+============================ Summary Matched: Xlib =============================
+libXpresent.x86_64 : A Xlib-compatible API for the Present extension
+libXpresent.i686 : A Xlib-compatible API for the Present extension
+xcb-util-image.i686 : Port of Xlib's XImage and XShmImage functions on top of libxcb
+xcb-util-image.x86_64 : Port of Xlib's XImage and XShmImage functions on top of libxcb
