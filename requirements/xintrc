@@ -1,0 +1,4 @@
+feh --bg-scale /home/Mad_Flasher/Downloads/Telegram\ Desktop/wallpaper.png &
+compton --config ~/.config/compton/compton.conf  &
+flameshot &
+exec dwm
