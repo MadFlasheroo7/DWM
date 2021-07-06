@@ -11,8 +11,8 @@ static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray4[]       = "#000000";
+static const char col_cyan[]        = "#B7AA88"; /* ffcb6b */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -64,26 +64,27 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[] = { "firefox" };
+static const char *termcmd[]  = { "kitty", NULL };
+static const char *browsercmd[] = { "google-chrome-stable", NULL };
 static const char *telegramcmd[] = { "telegram" };
 
 #include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,	XF86XK_MonBrightnessDown,	   spawn,	   SHCMD("brightnessctl set 10%-") },
-	{ 0,	XF86XK_MonBrightnessUp,		   spawn,	   SHCMD("brightnessctl set 10%+") },
-	{ 0,	XF86XK_AudioRaiseVolume,	   spawn,	   SHCMD("amixer set 'Master' 10%+") },
-	{ 0,	XF86XK_AudioLowerVolume,	   spawn,	   SHCMD("amixer set 'Master' 10%-") },
-	{ 0,	XF86XK_AudioMute,		   	   spawn,	   SHCMD("amixer set 'Master' 0") },
-	// android-studio path
-	// { MODKEY,						XK_a,      spawn,		   SHCMD("/path")}
+	{ MODKEY,		 	XK_F5,	   spawn,	   SHCMD("brillo -U 10") },
+	{ MODKEY,		 	XK_F6,	   spawn,	   SHCMD("brillo -A 10") },
+	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("figma-linux --no-sandbox %U") },
+	{ MODKEY,			XK_F12,	   spawn,	   SHCMD("pamixer --allow-boost -i 10") },
+	{ MODKEY,			XK_F11,	   spawn,	   SHCMD("pamixer --allow-boost -d 10") },
+	{ MODKEY,			XK_F10,	   spawn,	   SHCMD("pamixer --toggle-mute") },
+	{ MODKEY,			XK_a,      spawn,	   SHCMD("~/android-studio/bin/./studio.sh") },
+	{ MODKEY|ShiftMask,		XK_i,	   spawn,	   SHCMD("~/idea-IDE/bin/./idea.sh") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,		                XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,						XK_w,	   spawn,		   {.v = browsercmd } },
-	{ MODKEY,						XK_s,	   spawn,		   SHCMD("flameshot gui") },
+	{ MODKEY,		        XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			XK_w,	   spawn,	   {.v = browsercmd } },
+	{ MODKEY,			XK_s,	   spawn,	   SHCMD("flameshot gui") },
 	{ MODKEY,			XK_g,	   spawn,	   SHCMD("xgamma -bgamma 0.850") },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -91,11 +92,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,				XK_p,	   spawn,	   	   SHCMD("pavucontrol") },
+	{ MODKEY|ShiftMask,		XK_p,	   spawn,   	   SHCMD("pavucontrol") },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,	                	XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = telegramcmd} },
+	{ MODKEY,	                XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,		XK_t,	   spawn,	   {.v = telegramcmd} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
